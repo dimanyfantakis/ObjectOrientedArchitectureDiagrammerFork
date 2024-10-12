@@ -41,4 +41,12 @@ public enum ArcType implements Comparator<ArcType> {
     public int compare(ArcType o1, ArcType o2) {
         return Integer.compare(o1.degree, o2.degree);
     }
+
+    public static boolean isClosed(ArcType arcType)
+    {
+        return switch (arcType) {
+            case DEPENDENCY, ASSOCIATION -> false;
+            case EXTENSION, AGGREGATION, IMPLEMENTATION -> true;
+        };
+    }
 }

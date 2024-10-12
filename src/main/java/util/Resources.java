@@ -3,6 +3,7 @@ package util;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Objects;
 
 public class Resources {
 
@@ -11,6 +12,7 @@ public class Resources {
     }
 
     public static URI getResourceURI(String relativePath) throws URISyntaxException {
-        return Resources.class.getClassLoader().getResource(relativePath).toURI();
+        return Objects.requireNonNull(Resources.class.getClassLoader().getResource(relativePath))
+                .toURI();
     }
 }

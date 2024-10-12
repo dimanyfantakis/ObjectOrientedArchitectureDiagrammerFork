@@ -3,6 +3,7 @@ package view;
 public class AppStarter {
 
     public static void main(String... args) {
-        AppStarterHelper.main(args);
+//        AppStarterHelper.main(args);
+        Test.main(args);
     }
 }
